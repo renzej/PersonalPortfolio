@@ -3,29 +3,31 @@
 
 /* Used throughout the whole page*/
 @theme {
-  --color-background: #0f1418;
-  --color-foreground: #f0f2f5;
+    /* Default is dark mode */
+    --color-background: #0f1418;
+    --color-foreground: #f0f2f5;
 
-  --color-card: #141a1f;
+    --color-card: #141a1f;
 
-  --color-primary: #10b981;
-  --color-primary-foreground: #ffffff;
+    --color-primary: #10b981;
+    --color-primary-foreground: #ffffff;
 
-  --color-secondary: #1f2830;
-  --color-secondary-foreground: #10b981;
+    --color-secondary: #1f2830;
+    --color-secondary-foreground: #10b981;
 
-  --color-muted: #252e37;
-  --color-muted-foreground: #7a8491;
+    --color-muted: #252e37;
+    --color-muted-foreground: #7a8491;
 
-  --color-border: #232b32;
+    --color-border: #232b32;
 
-  --radius: 0.75rem;
+    --radius: 0.75rem;
 
-  --color-highlight: #fbbf24;
-  --color-surface: #1a2329;
+    --color-highlight: #fbbf24;
+    --color-surface: #1a2329;
+}
 
-  /* Light mode overrides */
-.light {
+/* Light mode overrides */
+light {
   --color-background: #f8fafc;
   --color-foreground: #0f1418;
 
@@ -60,5 +62,13 @@
 
   .font-serif {
     font-family: "Playfair Display", serif;
+  }
+}
+
+@layer components {
+  .glass {
+    background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
+    backdrop-filter: blur(16px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent)
   }
 }
