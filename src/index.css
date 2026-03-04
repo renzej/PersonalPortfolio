@@ -67,8 +67,10 @@ light {
 
 @layer components {
   .glass {
-    background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
+    background-color: color-mix(in srgb, var(--color-background) 75%, transparent);
     backdrop-filter: blur(16px);
-    border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent)
+    -webkit-backdrop-filter: blur(16px);
+
+    border-bottom: 1px solid color-mix(in srgb, var(--color-border) 35%, transparent);
   }
 }
