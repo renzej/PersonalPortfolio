@@ -1,0 +1,9 @@
+/* Main css files */
+
+@import "tailwindcss";
+
+/* Used throughout the whole page*/
+@theme {
+  --color-background: #0f1418;
+  --color-foreground: #f0f2f5;
+}
