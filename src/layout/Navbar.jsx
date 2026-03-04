@@ -21,7 +21,8 @@ export const Navbar = () => {
 					<span>Rence</span>
 				</a>
 
-				<ul className="hidden md:flex items-center gap-10">
+				{/* Desktop Navigation */}
+				<div className="hidden md:flex items-center gap-10">
 					{navLinks.map((link, index) => (
 						<a
 							href={link.href}
@@ -31,7 +32,7 @@ export const Navbar = () => {
 							{link.label}
 						</a>
 					))}
-				</ul>
+				</div>
 			</nav>
 		</header>
 	);
