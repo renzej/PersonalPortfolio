@@ -81,4 +81,11 @@ light {
 
     border: 1px solid color-mix(in srgb, var(--color-border) 20%, transparent);
   }
+
+  .glass-frosted {
+    background-color: color-mix(in srgb, var(--color-background) 70%, transparent);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+  }
 }

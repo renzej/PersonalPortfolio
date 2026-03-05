@@ -61,7 +61,7 @@ export const Navbar = () => {
 						exit={{ height: 0, opacity: 0, y: -8 }}
 						transition={{ duration: 0.25, ease: "easeInOut" }}
 					>
-						<div className="container mx-auto px-6 py-6 flex flex-col gap-4">
+						<div className="container mx-auto px-8 py-6 flex flex-col gap-4">
 							{navLinks.map((link, index) => (
 								<a
 									href={link.href}
