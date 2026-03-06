@@ -1,4 +1,7 @@
 import { motion } from "framer-motion";
+import { RotatingTitle } from "@/components/RotatingTitle";
+import { Button } from "@/components/Button";
+import { Github, Linkedin, Instagram, Phone, ArrowRight } from "lucide-react";
 
 export const Hero = () => {
 	return (
@@ -27,7 +30,7 @@ export const Hero = () => {
 						<motion.div
 							initial={{ opacity: 0, x: -40 }}
 							animate={{ opacity: 1, x: 0 }}
-							transition={{ duration: 0.5, delay: 0.2 }}
+							transition={{ duration: 0.5, delay: 0.5 }}
 							className="glass-frosted rounded-xl px-3 py-1"
 						>
 							<div className="flex items-center gap-4">
@@ -43,9 +46,9 @@ export const Hero = () => {
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
 							transition={{ duration: 0.8, delay: 0.5 }}
-							className="text-5xl md:text-6xl lg:text-7xl font-semibold text-center md:text-left md:mb-2"
+							className="text-4xl md:text-6xl lg:text-7xl font-semibold text-center md:text-left md:mb-2"
 						>
-							Rence Mayores
+							Clarence Mayores
 						</motion.h1>
 
 						{/* Subtitle - fades in */}
@@ -53,10 +56,56 @@ export const Hero = () => {
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
 							transition={{ duration: 0.8, delay: 0.5 }}
-							className="text-lg md:text-3xl text-center md:text-left"
+							className="text-lg md:text-3xl text-center md:text-left text-foreground/70 md:mb-2"
 						>
-							I'm a Full Stack Developer
+							I'm a{" "}
+							<RotatingTitle className="text-primary font-semibold" />
 						</motion.h3>
+						<motion.h4
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							transition={{ duration: 0.8, delay: 0.5 }}
+							className="md:text-lg text-center md:text-left font-light text-foreground/60"
+						>
+							Building reliable solutions and support users can
+							count on.
+						</motion.h4>
+
+						{/* Buttons */}
+						<motion.div className="flex mt-2 md:mt-3 items-center">
+							<Button
+								className="group text-sm rounded-lg"
+								size="sm"
+							>
+								My Projects{" "}
+								<ArrowRight className="w-4 h-4 ml-3 group-hover:translate-x-1 duration-300" />
+							</Button>
+						</motion.div>
+
+						{/* Social Buttons - slide from the bottom going up */}
+						<motion.div
+							initial={{ opacity: 0, y: 20 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.8, delay: 0.5 }}
+							className="flex gap-3 mt-2 md:mt-3"
+						>
+							{[
+								{ icon: Github, href: "#" },
+								{ icon: Linkedin, href: "#" },
+								{ icon: Instagram, href: "#" },
+								{ icon: Phone, href: "#" },
+							].map((social, idx) => (
+								<a
+									key={idx}
+									href={social.href}
+									className="group p-3 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300 hover:scale-108 origin-bottom"
+								>
+									{
+										<social.icon className="md:h-4 md:w-4 transition-transform duration-300 group-hover:scale-110" />
+									}
+								</a>
+							))}
+						</motion.div>
 					</div>
 				</div>
 			</div>
